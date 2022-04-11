@@ -26,6 +26,7 @@ button {
 .mac {
   position: relative;
   width: 100%;
+  margin-bottom: 200px;
 }
 
 .mac__header {
