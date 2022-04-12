@@ -52,81 +52,52 @@
       <div class="mac__inner">
         <div class="mac__left left">
           <div class="left__box">
-            <ul class="left__list">
-              <li class="left__item">
-                <div class="left__img-box">
-                  <img class="left__mac-img" src="https://cdn.macbro.uz/macbro/94afd179-46f3-49df-aaa5-de83d8210be1"
-                    alt="img">
-                </div>
-              </li>
-            </ul>
+            <ul class="left__list"></ul>
             <button class="left__modalBtn"><i class='bx bx-fullscreen'></i></button>
           </div>
           <div class="left__slider lslid">
-            <ul class="lslid__list">
-              <li class="lslid__item">
-                <div class="lslid__img slid-act">
-                  <img class="slider--imgs" src="https://cdn.macbro.uz/macbro/94afd179-46f3-49df-aaa5-de83d8210be1"
-                    alt="img">
-                </div>
-              </li>
-              <li class="lslid__item">
-                <div class="lslid__img">
-                  <img class="slider--imgs" src="https://cdn.macbro.uz/macbro/d396e206-2cb4-4ae0-8549-6496ae82f7ca"
-                    alt="img">
-                </div>
-              </li>
-              <li class="lslid__item">
-                <div class="lslid__img">
-                  <img class="slider--imgs" src="https://cdn.macbro.uz/macbro/32740eb9-79c2-4f28-93f8-5a04c8672f12"
-                    alt="img">
-                </div>
-              </li>
-              <li class="lslid__item">
-                <div class="lslid__img">
-                  <img class="slider--imgs" src="https://cdn.macbro.uz/macbro/605bacc5-0b9d-4736-a189-32380916d1bf"
-                    alt="img">
-                </div>
-              </li>
-            </ul>
+            <ul class="lslid__list"></ul>
           </div>
         </div>
 
         <div class="mac__right right">
           <div class="right__top">
-            <h2 class="right__title">MacBook Air 13-inch
-              <span class="right__title-span"> M1/8/256 Gold</span>
+            <h2 class="right__title" id="title">MacBook Air 13-inch
+              <span class="right__title-span">M1<span id="titram">/8</span><span id="titxot">/256</span>
+                <span id="titCol">Gold</span></span>
             </h2>
             <button class="right__top-btn"><i class='bx bx-exit'></i></button>
           </div>
           <div class="right__btn-box">
             <div class="right__ram-box">
               <h4 class="btns__title">Ram</h4>
-              <button class="right__ram-btn ram-btn-act">8GB</button>
-              <button class="right__ram-btn">16GB</button>
+              <button class="right__ram-btn ram-btn-act" id="ram8">8GB</button>
+              <button class="right__ram-btn" id="ram16">16GB</button>
             </div>
             <div class="right__pamet-box">
               <h4 class="btns__title">Xotira Hajmi</h4>
-              <button class="right__pamet-btn pamet-btn-act">256GB</button>
-              <button class="right__pamet-btn">512GB</button>
+              <button class="right__pamet-btn pamet-btn-act" id="xotira256">256GB</button>
+              <button class="right__pamet-btn" id="xotira512">512GB</button>
+              <button class="right__pamet-btn oneT" id="xotira1024">1TB</button>
             </div>
             <div class="right__pamet-box">
               <h4 class="btns__title">Ranglar</h4>
-              <button class="right__color-btn color-btn-act"><span class="mac-colors1"></span> TILLA RANG</button>
-              <button class="right__color-btn"><span class="mac-colors2"></span> KUMUSH RANG</button>
-              <button class="right__color-btn"><span class="mac-colors3"></span> KOSMIK KULRANG</button>
+              <button class="right__color-btn color-btn-act" id="goldBtn"><span class="mac-colors1"></span> TILLA
+                RANG</button>
+              <button class="right__color-btn" id="silverBtn"><span class="mac-colors2"></span> KUMUSH RANG</button>
+              <button class="right__color-btn" id="spaceGray"><span class="mac-colors3"></span> KOSMIK KULRANG</button>
             </div>
           </div>
 
           <div class="right__add-rem-box">
-            <button class="right__rem-btn">-</button>
-            <input class="right__count" type="number" name="number">
-            <button class="right__add-btn">+</button>
+            <button class="right__rem-btn" id="remCount">-</button>
+            <input class="right__count" id="countINput" type="number" name="number">
+            <button class="right__add-btn" id="addCount">+</button>
           </div>
 
           <div class="right__price">
-            <p class="right__price">12 497 000 so'm</p>
-            <p class="right__price2">14 621 000 so'm</p>
+            <p class="right__price" id="price1">12 497 000 so'm</p>
+            <p class="right__price2" id="price2">14 621 000 so'm</p>
           </div>
 
           <div class="right__submit-box">
@@ -139,10 +110,7 @@
   </section>
 
 
-
-
-
-
+  <script src="object.js"></script>
   <script src="main.js"></script>
 
 </body>
