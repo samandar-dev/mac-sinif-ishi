@@ -277,6 +277,7 @@ rambtns.forEach((btns, inx) => {
               })
               p1 = price1.innerHTML.split(' ')
               w = p1[0]
+              countINput.value = 1
             })
           })
         }
