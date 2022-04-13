@@ -247,6 +247,7 @@ rambtns.forEach((btns, inx) => {
             xotirabtn.className = "right__pamet-btn";
             xotirabtn.textContent = `${xbtn.xotira} GB`
             xotiraBox.appendChild(xotirabtn)
+            countINput.value = 1
           })
 
           let xotiraBtnAct = document.querySelectorAll('.right__pamet-btn');
