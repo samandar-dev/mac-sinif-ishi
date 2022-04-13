@@ -19,40 +19,16 @@ titram.textContent = '/8';
 titxot.textContent = '/256';
 titCol.textContent = 'Gold';
 
+let p1, w;
+p1 = price1.innerHTML.split(' ')
+w = p1[0]
+
 remCount.addEventListener('click', remCountFun);
 addCount.addEventListener('click', addCountFun);
-
-function addCountFun() {
-  let i = countINput.value
-  let inat = eval(i) + eval(1)
-  countINput.value = inat
-
-  let p1 = price1.innerHTML;
-  let p1add = p1
-  // let p2 = price2.innerHTML;
-  let pnat1 = eval(p1) + eval(price1.innerHTML)
-  price1.innerHTML = `${pnat1} so'm`
-  // price2.innerHTML = `${r8.skidca} so'm`
-}
-
-function remCountFun() {
-  let i = countINput.value
-  let inat = eval(i) - eval(1)
-  if (inat >= 1) {
-    countINput.value = inat
-
-    let p1 = price1.innerHTML;
-    let p1add = p1
-    // let p2 = price2.innerHTML;
-    let pnat1 = eval(p1) + eval(price1.innerHTML)
-    price1.innerHTML = `${pnat1} so'm`
-    // price2.innerHTML = `${r8.skidca} so'm`
-  }
-}
+countINput.value = 1
 
 // ram8.addEventListener('click', ram8Fun);
 // ram16.addEventListener('click', ram16Fun);
-countINput.value = 1
 
 // xotira256.addEventListener('click', () => {
 //   xotira256.classList.add('pamet-btn-act');
@@ -179,6 +155,9 @@ let sCou1 = 0
 let sCou2 = 0
 let sCou3 = 0
 
+let mTopList = document.querySelector('.modal__top_list');
+
+
 goldBtn.addEventListener('click', colorGold);
 silverBtn.addEventListener('click', colorSilver);
 spaceGrayBtn.addEventListener('click', colorspaceGray);
@@ -204,7 +183,10 @@ colorsObject[0].gold.forEach((urls) => {
       </div>`;
   slidImgList.appendChild(li1)
   sliderList.appendChild(li2)
+  // mTopList.appendChild(li1)
 })
+
+console.log(mTopList);
 
 function colorGold() {
   sCou1 = 0
@@ -405,17 +387,46 @@ rambtns.forEach((btns, inx) => {
         if (obj.ram + "GB" == btns.innerHTML) {
           obj.med.forEach((xbtn) => {
             titram.textContent = `/${obj.ram}`;
-            // titCol.textContent = `/${obj.name}`;
+            titxot.textContent = `/256`;
+            price1.textContent = `${obj.med[0].price} so'm`;
+            price2.textContent = `${obj.med[0].skidca} so'm`;
 
             let xotirabtn = document.createElement('button');
             xotirabtn.className = "right__pamet-btn";
             xotirabtn.textContent = `${xbtn.xotira} GB`
             xotiraBox.appendChild(xotirabtn)
           })
+
           let xotiraBtnAct = document.querySelectorAll('.right__pamet-btn');
           xotiraBtnAct[0].classList.add('pamet-btn-act');
-          titxot.textContent = `/${obj.xotira}`;
+          xotiraBtnAct.forEach((xotAct) => {
+            xotAct.addEventListener('click', () => {
+              let a;
+              a = xotAct.textContent.split(' ');
+              titxot.textContent = `/${a[0]}`;
+            })
+          })
 
+          xotiraBtnAct.forEach((memory) => {
+            memory.addEventListener('click', () => {
+              obj.med.forEach((elem) => {
+                if (memory.textContent == '256 GB') {
+                  price1.textContent = `${obj.med[0].price} so'm`;
+                  price2.textContent = `${obj.med[0].skidca} so'm`;
+                }
+                if (memory.textContent == '512 GB') {
+                  price1.textContent = `${obj.med[1].price} so'm`;
+                  price2.textContent = `${obj.med[1].skidca} so'm`;
+                }
+                if (memory.textContent == '1024 GB') {
+                  price1.textContent = `${obj.med[2].price} so'm`;
+                  price2.textContent = `${obj.med[2].skidca} so'm`;
+                }
+              })
+              p1 = price1.innerHTML.split(' ')
+              w = p1[0]
+            })
+          })
         }
       })
     }
@@ -429,6 +440,14 @@ rambtns.forEach((btns, inx) => {
 
     let xotiraBtns = document.querySelectorAll('.right__pamet-btn');
 
+    xotiraBtns.forEach((xotAct) => {
+      xotAct.addEventListener('click', () => {
+        let a;
+        a = xotAct.textContent.split(' ');
+        titxot.textContent = `/${a[0]}`;
+      })
+    })
+
     xotiraBtns.forEach((xBtns) => {
       xBtns.addEventListener('click', () => {
         xotiraBtns.forEach((xBtn) => {
@@ -439,16 +458,9 @@ rambtns.forEach((btns, inx) => {
         xBtns.classList.add('pamet-btn-act');
       })
     })
-
-    xotiraBtns.forEach((xBtns) => {
-      if (xBtns.classList.contains('pamet-btn-act')) {
-        console.log(xBtns);
-        xBtns.classList.add('pamet-btn-act');
-      }
-    })
-
   })
 })
+
 
 rambtns.forEach((bb) => {
   rambtns.forEach((actBtn) => {
@@ -490,4 +502,51 @@ xotiraBtns.forEach((xBtns) => {
   xotiraBtns[0].classList.add('actXotira');
 })
 
-/// ======================================
+macObject.forEach((el) => {
+  xotiraBtns.forEach((memory) => {
+    memory.addEventListener('click', () => {
+      el.med.forEach((elem) => {
+        if (memory.textContent == '256 GB') {
+          price1.textContent = `12497000 so'm`;
+          price2.textContent = `14621000 so'm`;
+        }
+        if (memory.textContent == '512 GB') {
+          price1.textContent = `15066000 so'm`;
+          price2.textContent = `17627500 so'm`;
+        }
+      })
+      p1 = price1.innerHTML.split(' ')
+      w = p1[0]
+    })
+  })
+})
+
+
+
+function addCountFun() {
+  let i = countINput.value
+  let inat = eval(i) + eval(1)
+  countINput.value = inat
+
+  let p1, pri1, nat1;
+
+  p1 = price1.innerHTML.split(' ')
+  pri1 = p1[0]
+  nat1 = eval(pri1) + eval(w) + ` so'm`;
+  price1.innerHTML = nat1
+  console.log(nat1);
+}
+
+function remCountFun() {
+  let i = countINput.value
+  let inat = eval(i) - eval(1)
+
+  let p1, pri1, nat1;
+  if (inat >= 1) {
+    countINput.value = inat
+    p1 = price1.innerHTML.split(' ')
+    pri1 = p1[0]
+    nat1 = eval(pri1) - eval(w) + ` so'm`;
+    price1.innerHTML = nat1
+  }
+}

@@ -3,14 +3,15 @@ const macObject = [
     id: 1,
     title: "MacBook Air 13-inch",
     ram: 8,
-    active: true,
     med: [
       {
+        active: true,
         xotira: 256,
         price: 12497000,
         skidca: 14621000,
       },
       {
+        active: false,
         xotira: 512,
         price: 15066000,
         skidca: 17627500,
@@ -21,63 +22,58 @@ const macObject = [
     id: 2,
     title: "MacBook Air 13-inch",
     ram: 16,
-    active: false,
     med: [
       {
+        active: true,
         xotira: 256,
         price: 16935000,
         skidca: 19813500,
       },
       {
+        active: false,
         xotira: 512,
         price: 19270500,
         skidca: 22546500,
       },
       {
+        active: false,
         xotira: 1024,
-        price: 20438500,
-        skidca: 23913000,
-      },
-      {
-        xotira: 2048,
         price: 20438500,
         skidca: 23913000,
       },
     ],
   },
-  {
-    id: 3,
-    title: "MacBook Air 13-inch",
-    ram: 32,
-    active: false,
-    med: [
-      {
-        xotira: 256,
-        price: 16935000,
-        skidca: 19813500,
-      },
-      {
-        xotira: 512,
-        price: 19270500,
-        skidca: 22546500,
-      },
-      {
-        xotira: 1024,
-        price: 20438500,
-        skidca: 23913000,
-      },
-      {
-        xotira: 2048,
-        price: 20438500,
-        skidca: 23913000,
-      },
-      {
-        xotira: 4096,
-        price: 20438500,
-        skidca: 23913000,
-      },
-    ],
-  },
+  // {
+  //   id: 3,
+  //   title: "MacBook Air 13-inch",
+  //   ram: 32,
+  //   med: [
+  //     {
+  //       active: true,
+  //       xotira: 256,
+  //       price: 18935000,
+  //       skidca: 19813500,
+  //     },
+  //     {
+  //       active: false,
+  //       xotira: 512,
+  //       price: 20270500,
+  //       skidca: 22546500,
+  //     },
+  //     {
+  //       active: false,
+  //       xotira: 1024,
+  //       price: 21438500,
+  //       skidca: 23913000,
+  //     },
+  //     {
+  //       active: false,
+  //       xotira: 2048,
+  //       price: 22438500,
+  //       skidca: 23913000,
+  //     },
+  //   ],
+  // },
 ]
 
 const colorsObject = [
