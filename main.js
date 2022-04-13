@@ -32,13 +32,12 @@ let spaceGrayBtn = document.querySelector('#spaceGray')
 
 let sliderList = document.querySelector('.lslid__list');
 let slidImgList = document.querySelector('.left__list');
+let modalLIst1 = document.querySelector('.modal__top_list');
+let modalLIst2 = document.querySelector('.modal__bottom_list');
 let sCou = 0
 let sCou1 = 0
 let sCou2 = 0
 let sCou3 = 0
-
-let mTopList = document.querySelector('.modal__top_list');
-
 
 goldBtn.addEventListener('click', colorGold);
 silverBtn.addEventListener('click', colorSilver);
@@ -51,8 +50,13 @@ colorsObject[0].gold.forEach((urls) => {
   sCou++
   let li1 = document.createElement('li');
   let li2 = document.createElement('li');
+  let modLi = document.createElement('li');
+  let modLi2 = document.createElement('li');
   li1.className = "left__item";
   li2.className = "lslid__item";
+  modLi.className = "left__item";
+  modLi2.className = "lslid__item";
+
   li1.innerHTML = `
       <div class="left__img-box">
         <img class="left__mac-img" src="${urls}"
@@ -63,11 +67,24 @@ colorsObject[0].gold.forEach((urls) => {
       <img class="slider--imgs" src="${urls}"
       alt="img">
       </div>`;
+
+  modLi.innerHTML = `
+      <div class="modal__img-box">
+        <img class="left__mac-img" src="${urls}"
+          alt="img">
+      </div>`;
+
+  modLi2.innerHTML = `
+      <div class="lslid__img" onclick="slidFun(${sCou})">
+      <img class="slider--imgs" src="${urls}"
+      alt="img">
+      </div>`;
+
   slidImgList.appendChild(li1)
   sliderList.appendChild(li2)
+  modalLIst1.appendChild(modLi)
+  modalLIst2.appendChild(modLi2)
 })
-
-console.log(mTopList);
 
 function colorGold() {
   sCou1 = 0
@@ -85,8 +102,12 @@ function colorGold() {
         sCou1++
         let li1 = document.createElement('li');
         let li2 = document.createElement('li');
+        let modLi = document.createElement('li');
+        let modLi2 = document.createElement('li');
         li1.className = "left__item";
         li2.className = "lslid__item";
+        modLi.className = "left__item";
+        modLi2.className = "lslid__item";
 
         li1.innerHTML = `
             <div class="left__img-box">
@@ -100,8 +121,22 @@ function colorGold() {
             alt="img">
             </div>`;
 
+        modLi.innerHTML = `
+            <div class="modal__img-box">
+              <img class="left__mac-img" src="${gol}"
+                alt="img">
+            </div>`;
+
+        modLi2.innerHTML = `
+            <div class="lslid__img" onclick="slidFun(${sCou1})">
+            <img class="slider--imgs" src="${gol}"
+            alt="img">
+            </div>`;
+
         slidImgList.appendChild(li1)
         sliderList.appendChild(li2)
+        modalLIst1.appendChild(modLi)
+        modalLIst2.appendChild(modLi2)
       })
     }
   })
@@ -122,8 +157,12 @@ function colorSilver() {
         sCou2++
         let li1 = document.createElement('li');
         let li2 = document.createElement('li');
+        let modLi = document.createElement('li');
+        let modLi2 = document.createElement('li');
         li1.className = "left__item";
         li2.className = "lslid__item";
+        modLi.className = "left__item";
+        modLi2.className = "lslid__item";
 
         li1.innerHTML = `
         <div class="left__img-box">
@@ -137,8 +176,22 @@ function colorSilver() {
         alt="img">
         </div>`;
 
+        modLi.innerHTML = `
+        <div class="modal__img-box">
+          <img class="left__mac-img" src="${sil}"
+            alt="img">
+        </div>`;
+
+        modLi2.innerHTML = `
+        <div class="lslid__img" onclick="slidFun(${sCou2})">
+        <img class="slider--imgs" src="${sil}"
+        alt="img">
+        </div>`;
+
         slidImgList.appendChild(li1)
         sliderList.appendChild(li2)
+        modalLIst1.appendChild(modLi)
+        modalLIst2.appendChild(modLi)
       })
     }
   })
@@ -161,8 +214,12 @@ function colorspaceGray() {
         sCou3++
         let li1 = document.createElement('li');
         let li2 = document.createElement('li');
+        let modLi = document.createElement('li');
+        let modLi2 = document.createElement('li');
         li1.className = "left__item";
-        li2.className = "lslid__item";
+        li2.className = "left__item";
+        modLi.className = "left__item";
+        modLi2.className = "lslid__item";
 
         li1.innerHTML = `
               <div class="left__img-box">
@@ -176,8 +233,22 @@ function colorspaceGray() {
             alt="img">
             </div>`;
 
+        modLi.innerHTML = `
+          <div class="modal__img-box">
+            <img class="left__mac-img" src="${coll}"
+             alt="img">
+          </div>`;
+
+        modLi2.innerHTML = `
+            <div class="lslid__img" onclick="slidFun(${sCou3})">
+            <img class="slider--imgs" src="${coll}"
+            alt="img">
+            </div>`;
+
         slidImgList.appendChild(li1)
         sliderList.appendChild(li2)
+        modalLIst1.appendChild(modLi)
+        modalLIst2.appendChild(modLi)
       })
     }
   })
@@ -197,6 +268,7 @@ function slidFun(id) {
     if (id == inx + 1) {
       items.classList.add('slid-act');
       slidImgList.style.transform = `translateX(-${530 * id - 530}px)`
+      modalLIst1.style.transform = `translateX(-${95 * id - 95}vw)`
     }
     else {
       items.classList.remove('slid-act');
@@ -414,3 +486,64 @@ function remCountFun() {
 }
 
 let modalBtn = document.querySelector('.left__modalBtn');
+let modalRemBTn = document.querySelector('.mdal__btn');
+let modal = document.querySelector('.modal');
+
+modalBtn.addEventListener('click', () => {
+  modal.classList.add('d-block');
+})
+modalRemBTn.addEventListener('click', () => {
+  modal.classList.remove('d-block');
+})
+
+
+let slidBtnLeft = document.querySelector('.slid__btn-left');
+let slidBtnRight = document.querySelector('.slid__btn-right');
+let sliList = document.querySelector('.slid__list');
+let slidCount = 1
+
+
+slidBtnRight.addEventListener('click', slidRight)
+slidBtnLeft.addEventListener('click', slidLeft)
+
+function slidRight() {
+  slidCount++
+  if (slidCount <= 8) {
+    sliList.style.transform = `translateX(-${380 * slidCount - 380}px)`
+    slidBtnLeft.classList.add('d-block')
+  }
+  if (slidCount == 8) {
+    slidBtnRight.classList.add('d-none')
+  }
+}
+
+function slidLeft() {
+  slidCount--
+  if (slidCount >= 1) {
+    sliList.style.transform = `translateX(-${380 * slidCount - 380}px)`
+    slidBtnRight.classList.remove('d-none')
+  }
+  if (slidCount == 1) {
+    slidBtnLeft.classList.remove('d-block')
+  }
+}
+
+let desLeftBtn = document.querySelector('.desc__left-btn');
+let desRightBtn = document.querySelector('.desc__right-btn');
+let descText1 = document.querySelector('#desc__text1');
+let descText2 = document.querySelector('#desc__text2');
+descText2.classList.add('d-none');
+
+desRightBtn.addEventListener('click', () => {
+  descText1.classList.add('d-none');
+  descText2.classList.remove('d-none');
+  desRightBtn.classList.add('text-act');
+  desLeftBtn.classList.remove('text-act');
+})
+
+desLeftBtn.addEventListener('click', () => {
+  descText1.classList.remove('d-none');
+  descText2.classList.add('d-none');
+  desLeftBtn.classList.add('text-act');
+  desRightBtn.classList.remove('text-act');
+})
