@@ -13,9 +13,11 @@ titram.textContent = '/8';
 titxot.textContent = '/256';
 titCol.textContent = 'Gold';
 
-let p1, w;
+let p1, w, p2, ww;
 p1 = price1.innerHTML.split(' ')
+p2 = price2.innerHTML.split(' ')
 w = p1[0]
+ww = p2[0]
 
 remCount.addEventListener('click', remCountFun);
 addCount.addEventListener('click', addCountFun);
@@ -63,7 +65,6 @@ colorsObject[0].gold.forEach((urls) => {
       </div>`;
   slidImgList.appendChild(li1)
   sliderList.appendChild(li2)
-  // mTopList.appendChild(li1)
 })
 
 console.log(mTopList);
@@ -157,10 +158,6 @@ function colorspaceGray() {
 
     if (col.name == "Space Gray") {
       col.SpaceGray.forEach((coll) => {
-        // let pr = price1.textContent;
-        // let nat = eval(pr) + eval(coll.price);
-        // price1.textContent = 11
-        // console.log(pr);
         sCou3++
         let li1 = document.createElement('li');
         let li2 = document.createElement('li');
@@ -278,6 +275,8 @@ rambtns.forEach((btns, inx) => {
               })
               p1 = price1.innerHTML.split(' ')
               w = p1[0]
+              p2 = price2.innerHTML.split(' ')
+              ww = p2[0]
               countINput.value = 1
             })
           })
@@ -371,6 +370,8 @@ macObject.forEach((el) => {
       })
       p1 = price1.innerHTML.split(' ')
       w = p1[0]
+      p2 = price2.innerHTML.split(' ')
+      ww = p2[0]
       countINput.value = 1
     })
   })
@@ -381,25 +382,35 @@ function addCountFun() {
   let inat = eval(i) + eval(1)
   countINput.value = inat
 
-  let p1, pri1, nat1;
+  let p1, p2, pri1, nat1, pri2, nat2;
 
   p1 = price1.innerHTML.split(' ')
+  p2 = price2.innerHTML.split(' ')
   pri1 = p1[0]
+  pri2 = p2[0]
   nat1 = eval(pri1) + eval(w) + ` so'm`;
+  nat2 = eval(pri2) + eval(ww) + ` so'm`;
   price1.innerHTML = nat1
-  console.log(nat1);
+  price2.innerHTML = nat2
 }
 
 function remCountFun() {
   let i = countINput.value
   let inat = eval(i) - eval(1)
 
-  let p1, pri1, nat1;
+  let p1, p2, pri1, nat1, pri2, nat2;
+
   if (inat >= 1) {
     countINput.value = inat
     p1 = price1.innerHTML.split(' ')
+    p2 = price2.innerHTML.split(' ')
     pri1 = p1[0]
+    pri2 = p2[0]
     nat1 = eval(pri1) - eval(w) + ` so'm`;
+    nat2 = eval(pri2) - eval(ww) + ` so'm`;
     price1.innerHTML = nat1
+    price2.innerHTML = nat2
   }
 }
+
+let modalBtn = document.querySelector('.left__modalBtn');

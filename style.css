@@ -457,7 +457,7 @@ button {
   display: none;
 }
 
-.modal {
+/* .modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -497,4 +497,4 @@ button {
 .modal__bottom-box {
 }
 .modal__bottom_list {
-}
+} */
