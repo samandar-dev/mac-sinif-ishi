@@ -173,6 +173,7 @@ button {
 
 .lslid__item {
   width: 110px;
+  height: 110px;
   margin: 0 2px;
   cursor: pointer;
   border: 2px solid transparent;
@@ -194,10 +195,13 @@ button {
 }
 
 .slid-act {
+  margin-left: -2px;
+  margin-top: -2px;
   border: 2px solid #000;
 }
 
 .lslid__item:hover {
+  /* height: 90%; */
   border: 2px solid #000;
 }
 
@@ -262,7 +266,8 @@ button {
 
 .right__ram-btn {
   padding: 15px 60px;
-  margin: 0 10px;
+  margin: 0 5px;
+  margin-bottom: 10px;
   border: none;
   border: 2px solid #555;
   border-radius: 10px;
@@ -283,8 +288,9 @@ button {
 }
 
 .right__pamet-btn {
-  padding: 15px 60px;
-  margin: 0 10px;
+  padding: 15px 50px;
+  margin: 0 5px;
+  margin-bottom: 10px;
   border: none;
   border: 2px solid #555;
   border-radius: 10px;
@@ -445,4 +451,8 @@ button {
   .mac__right {
     width: 100%;
   }
+}
+
+.d-none {
+  display: none;
 }
