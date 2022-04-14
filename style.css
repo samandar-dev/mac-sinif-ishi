@@ -703,6 +703,7 @@ button {
   border: none;
   font-size: 35px;
   line-height: 40px;
+  transition: all 0.3s ease;
 }
 
 .slid__btn-left {
